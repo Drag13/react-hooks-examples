@@ -4,6 +4,10 @@ type WithCallback = { callback: () => void };
 
 class ExpensiveComponent extends PureComponent<WithCallback> {
   render() {
+    let i = 0;
+    while (i < 1000_000_000) {
+      i++;
+    }
     const { callback } = this.props;
     return <button onClick={callback}>Expensive</button>;
   }
