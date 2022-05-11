@@ -1,6 +1,15 @@
 import ReactDOM from "react-dom/client";
-import App from "./Bootstrap";
+import App from "./App";
+import { configure } from "mobx";
 import "./index.css";
+
+configure({
+  enforceActions: "always",
+  computedRequiresReaction: true,
+  reactionRequiresObservable: true,
+  observableRequiresReaction: true,
+  disableErrorBoundaries: true,
+});
 
 const rootId = "root";
 const root = document.getElementById(rootId);
