@@ -1,13 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-type EmployeeData = {
-  salary: number;
-  onBench: boolean;
-};
-
-const data: EmployeeData = { salary: 100, onBench: true };
-
 const Dashboard = ({ salary }: { salary: number }) => (
   <div>
     <h1>Dashboard</h1>
@@ -33,7 +26,7 @@ const EmployeeCard = ({ salary }: { salary: number }) => {
 };
 
 function App() {
-  const [employee] = useState(data);
+  const [employee] = useState({ salary: 100, onBench: true });
   return (
     <div className="app">
       <Dashboard salary={employee.salary} />
